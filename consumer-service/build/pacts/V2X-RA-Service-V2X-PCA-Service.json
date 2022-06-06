@@ -1,0 +1,58 @@
+{
+  "provider": {
+    "name": "V2X-PCA-Service"
+  },
+  "consumer": {
+    "name": "V2X-RA-Service"
+  },
+  "interactions": [
+    {
+      "description": "Cert Apply",
+      "request": {
+        "method": "POST",
+        "path": "/cert/apply",
+        "headers": {
+          "Content-Type": "application/octet-stream"
+        },
+        "body": "AQIDBA=="
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/octet-stream"
+        },
+        "body": "DCAtFw==",
+        "matchingRules": {
+          "body": {
+            "$": {
+              "matchers": [
+                {
+                  "match": "contentType",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "Cert apply success",
+          "params": {
+            "test": "shiliang",
+            "cert": null
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.1.7"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "provider": {
+    "name": "provider-springboot-customer"
+  },
+  "consumer": {
+    "name": "consumer-get-customers"
+  },
+  "interactions": [
+    {
+      "description": "Get All kl.v2x.Customer Info",
+      "request": {
+        "method": "GET",
+        "path": "/customers"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        "body": [
+          {
+            "name": "customer name",
+            "id": 1999
+          }
+        ],
+        "matchingRules": {
+          "body": {
+            "$": {
+              "matchers": [
+                {
+                  "match": "type",
+                  "min": 0
+                }
+              ],
+              "combine": "AND"
+            },
+            "$[*].name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$[*].id": {
+              "matchers": [
+                {
+                  "match": "number"
+                }
+              ],
+              "combine": "AND"
+            }
+          },
+          "header": {
+            "Content-Type": {
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset=[\\w\\-]+)?"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "customers exists"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.1.7"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+kl/v2x/test/CustomersPactTest.java
+ kl.v2x.test.CustomersPactTest
+kl/v2x/test/DeviceUploadPactTest.java
+ kl.v2x.test.DeviceUploadPactTest
+kl/v2x/test/CertApplyPactTest.java
+ kl.v2x.test.CertApplyPactTest
+ kl.v2x.test.MyVerifier

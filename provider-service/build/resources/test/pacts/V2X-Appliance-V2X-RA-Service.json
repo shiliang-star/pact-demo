@@ -1,0 +1,74 @@
+{
+  "provider": {
+    "name": "V2X-RA-Service"
+  },
+  "consumer": {
+    "name": "V2X-Appliance"
+  },
+  "interactions": [
+    {
+      "description": "Upload device info success",
+      "request": {
+        "method": "POST",
+        "path": "/device/upload",
+        "body": {
+          "guid": "mock_guid",
+          "vin": "mock_vin",
+          "duns": "mock_duns"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "body": {
+          "data": true,
+          "resultCode": "200",
+          "message": "success"
+        },
+        "matchingRules": {
+          "body": {
+            "$.resultCode": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.message": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.data": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "Upload success"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.1.7"
+    }
+  }
+}

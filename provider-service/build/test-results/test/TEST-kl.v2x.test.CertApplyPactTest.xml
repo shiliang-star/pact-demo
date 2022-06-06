@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="kl.v2x.test.CertApplyPactTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-06T08:00:54" hostname="ShideMacBook-Pro.local" time="2.006">
+  <properties/>
+  <testcase name="Pact between V2X-RA-Service (1.0-SNAPSHOT) and V2X-PCA-Service - Cert Apply" classname="kl.v2x.test.CertApplyPactTest" time="2.006"/>
+  <system-out><![CDATA[16:00:43.702 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:00:43.713 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:00:43.761 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [kl.v2x.test.CertApplyPactTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:00:43.788 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [kl.v2x.test.CertApplyPactTest], using SpringBootContextLoader
+16:00:43.793 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [kl.v2x.test.CertApplyPactTest]: class path resource [kl/v2x/test/CertApplyPactTest-context.xml] does not exist
+16:00:43.793 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [kl.v2x.test.CertApplyPactTest]: class path resource [kl/v2x/test/CertApplyPactTestContext.groovy] does not exist
+16:00:43.794 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [kl.v2x.test.CertApplyPactTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:00:43.865 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [kl.v2x.test.CertApplyPactTest]
+16:00:44.060 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [kl.v2x.test.CertApplyPactTest]: using defaults.
+16:00:44.061 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:00:44.075 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/TransactionDefinition]
+16:00:44.076 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+16:00:44.076 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5e7eb68f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1ca590f4, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@322bc996, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@19d6394c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@32373e37, org.springframework.test.context.event.EventPublishingTestExecutionListener@2252ab5, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6e2e341e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@469a7cce, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4dd724ac, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@668cdf21, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@791d992a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6c74e6cb]
+16:00:44.082 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@27c23a25 testClass = CertApplyPactTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@42ab610 testClass = CertApplyPactTest, locations = '{}', classes = '{class kl.v2x.provider.ProviderApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@38442bdd, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1c7963c7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6c24e04f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@423cbf7e, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1e092b65], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]], class annotated with @DirtiesContext [false] with mode [null].
+16:00:44.102 [Test worker] DEBUG au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider - provideTestTemplateInvocationContexts called
+16:00:44.116 [Test worker] DEBUG au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider - Verifying pacts for provider 'V2X-PCA-Service' and consumer 'null'
+16:00:44.116 [Test worker] DEBUG au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider - Pact source on test class: null
+16:00:44.400 [Test worker] DEBUG au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider - Pact loaders on test class: [@au.com.dius.pact.provider.junitsupport.loader.PactBroker(scheme=https, valueResolver=class au.com.dius.pact.core.support.expressions.SystemPropertyResolver, port=${pactbroker.port:}, enablePendingPacts=${pactbroker.enablePending:false}, host=ariman.pactflow.io, includeWipPactsSince=${pactbroker.includeWipPactsSince:}, consumers=[${pactbroker.consumers:}], consumerVersionSelectors=[@au.com.dius.pact.provider.junitsupport.loader.VersionSelector(latest=${pactbroker.consumerversionselectors.latest:}, tag=${pactbroker.consumerversionselectors.tags:})], authentication=@au.com.dius.pact.provider.junitsupport.loader.PactBrokerAuth(password=wuKYeBiLtmhKqR5ODqpmzZ7iVcDVt, token=, username=bdYdtbx2qrRHsHfmYDOar8ecaXX0haE), providerTags=[${pactbroker.providerTags:}], tags=[${pactbroker.tags:}])]
+16:00:44.426 [Test worker] DEBUG au.com.dius.pact.provider.junitsupport.loader.PactBrokerLoader - Loading pacts from pact broker for provider V2X-PCA-Service and consumer version selectors []
+16:00:44.428 [Test worker] DEBUG au.com.dius.pact.provider.junitsupport.loader.PactBrokerLoader - Authentication: Basic
+16:00:44.433 [Test worker] DEBUG au.com.dius.pact.core.pactbroker.HalClient - Fetching: /
+16:00:44.971 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+16:00:44.976 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+16:00:44.977 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://ariman.pactflow.io:443][total available: 0; route allocated: 0 of 5; total allocated: 0 of 10]
+16:00:44.984 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {s}->https://ariman.pactflow.io:443][total available: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+16:00:44.985 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://ariman.pactflow.io:443
+16:00:45.882 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to ariman.pactflow.io/54.79.144.53:443
+16:00:45.882 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Connecting socket to ariman.pactflow.io/54.79.144.53:443 with timeout 0
+16:00:46.063 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: [TLSv1.2]
+16:00:46.063 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_DSS_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DHE_DSS_WITH_AES_256_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+16:00:46.063 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+16:00:46.613 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Secure session established
+16:00:46.614 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+16:00:46.614 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+16:00:46.615 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  peer principal: CN=*.pact.dius.com.au
+16:00:46.616 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  peer alternative names: [*.pact.dius.com.au, *.pactflow.io]
+16:00:46.616 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  issuer principal: CN=Amazon, OU=Server CA 1B, O=Amazon, C=US
+16:00:46.620 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.5:53727<->54.79.144.53:443
+16:00:46.620 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET / HTTP/1.1
+16:00:46.620 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+16:00:46.621 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+16:00:46.621 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> GET / HTTP/1.1
+16:00:46.622 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Type: application/json
+16:00:46.622 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept: application/hal+json, application/json
+16:00:46.622 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: ariman.pactflow.io
+16:00:46.622 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+16:00:46.622 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)
+16:00:46.622 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+16:00:46.622 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "GET / HTTP/1.1[\r][\n]"
+16:00:46.622 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Type: application/json[\r][\n]"
+16:00:46.622 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept: application/hal+json, application/json[\r][\n]"
+16:00:46.622 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: ariman.pactflow.io[\r][\n]"
+16:00:46.622 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+16:00:46.622 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)[\r][\n]"
+16:00:46.622 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+16:00:46.622 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+16:00:46.808 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 401 Unauthorized[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Mon, 06 Jun 2022 08:00:46 GMT[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: text/plain[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 0[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Accept[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "WWW-Authenticate: Basic realm="Restricted area"[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pact-Broker-Version: 2.100.0[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pact-Broker-Git-Sha: 69827ecc[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pactflow-Git-Sha: e1a2389c2[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Strict-Transport-Security: max-age=63072000; includeSubDomains; preload[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Request-Id: 3d03a6d434272583393a4b6affa47e32[\r][\n]"
+16:00:46.809 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+16:00:46.813 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 401 Unauthorized
+16:00:46.813 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Mon, 06 Jun 2022 08:00:46 GMT
+16:00:46.813 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: text/plain
+16:00:46.813 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 0
+16:00:46.813 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
+16:00:46.814 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Accept
+16:00:46.814 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << WWW-Authenticate: Basic realm="Restricted area"
+16:00:46.814 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pact-Broker-Version: 2.100.0
+16:00:46.814 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pact-Broker-Git-Sha: 69827ecc
+16:00:46.814 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pactflow-Git-Sha: e1a2389c2
+16:00:46.814 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Content-Type-Options: nosniff
+16:00:46.814 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+16:00:46.814 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Request-Id: 3d03a6d434272583393a4b6affa47e32
+16:00:46.817 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+16:00:46.818 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Authentication required
+16:00:46.818 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - ariman.pactflow.io:443 requested authentication
+16:00:46.819 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Authentication schemes in the order of preference: [Negotiate, Kerberos, NTLM, CredSSP, Digest, Basic]
+16:00:46.819 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Negotiate authentication scheme not available
+16:00:46.819 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Kerberos authentication scheme not available
+16:00:46.819 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for NTLM authentication scheme not available
+16:00:46.819 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for CredSSP authentication scheme not available
+16:00:46.819 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Digest authentication scheme not available
+16:00:46.822 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Selected authentication options: [BASIC [complete=true]]
+16:00:46.824 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET / HTTP/1.1
+16:00:46.824 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: CHALLENGED
+16:00:46.824 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Generating response to an authentication challenge using basic scheme
+16:00:46.833 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+16:00:46.834 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> GET / HTTP/1.1
+16:00:46.834 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Type: application/json
+16:00:46.834 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept: application/hal+json, application/json
+16:00:46.834 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: ariman.pactflow.io
+16:00:46.834 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+16:00:46.834 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)
+16:00:46.834 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+16:00:46.834 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Authorization: Basic YmRZZHRieDJxclJIc0hmbVlET2FyOGVjYVhYMGhhRTp3dUtZZUJpTHRtaEtxUjVPRHFwbXpaN2lWY0RWdA==
+16:00:46.834 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "GET / HTTP/1.1[\r][\n]"
+16:00:46.834 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Type: application/json[\r][\n]"
+16:00:46.834 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept: application/hal+json, application/json[\r][\n]"
+16:00:46.834 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: ariman.pactflow.io[\r][\n]"
+16:00:46.834 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+16:00:46.834 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)[\r][\n]"
+16:00:46.834 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+16:00:46.834 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Authorization: Basic YmRZZHRieDJxclJIc0hmbVlET2FyOGVjYVhYMGhhRTp3dUtZZUJpTHRtaEtxUjVPRHFwbXpaN2lWY0RWdA==[\r][\n]"
+16:00:46.834 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+16:00:47.141 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+16:00:47.141 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Mon, 06 Jun 2022 08:00:47 GMT[\r][\n]"
+16:00:47.141 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: application/hal+json;charset=utf-8[\r][\n]"
+16:00:47.141 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 4469[\r][\n]"
+16:00:47.141 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+16:00:47.141 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Accept[\r][\n]"
+16:00:47.141 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Server: Webmachine-Ruby/1.6.0 Rack/1.3[\r][\n]"
+16:00:47.141 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pact-Broker-Version: 2.100.0[\r][\n]"
+16:00:47.141 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pact-Broker-Git-Sha: 69827ecc[\r][\n]"
+16:00:47.142 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pactflow-Git-Sha: e1a2389c2[\r][\n]"
+16:00:47.142 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
+16:00:47.143 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Strict-Transport-Security: max-age=63072000; includeSubDomains; preload[\r][\n]"
+16:00:47.143 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Request-Id: a5f3701ff5ba5d8d20a8b4fac1ca644e[\r][\n]"
+16:00:47.143 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+16:00:47.143 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "{"_links":{"self":{"href":"https://ariman.pactflow.io","title":"Index","templated":false},"pb:publish-pact":{"href":"https://ariman.pactflow.io/pacts/provider/{provider}/consumer/{consumer}/version/{consumerApplicationVersion}","title":"Publish a pact","templated":true},"pb:publish-contracts":{"href":"https://ariman.pactflow.io/contracts/publish","title":"Publish contracts","templated":false},"pb:latest-pact-versions":{"href":"https://ariman.pactflow.io/pacts/latest","title":"Latest pact versions","templated":false},"pb:tagged-pact-versions":{"href":"https://ariman.pactflow.io/pacts/provider/{provider}/consumer/{consumer}/tag/{tag}","title":"All versions of a pact for a given consumer, provider and consumer version tag","templated":false},"pb:pacticipants":{"href":"https://ariman.pactflow.io/pacticipants","title":"Pacticipants","templated":false},"pb:pacticipant":{"href":"https://ariman.pactflow.io/pacticipants/{pacticipant}","title":"Fetch pacticipant by name","templated":true},"pb:latest-provider-pacts":{"href":"https://ariman.pactflow.io/pacts/provider/{provider}/latest","title":"Latest pacts by provider","templated":true},"pb:latest-provider-pacts-with-tag":{"href":"https://ariman.pactflow.io/pacts/provider/{provider}/latest/{tag}","title":"Latest pacts for provider with the specified tag","templated":true},"pb:provider-pacts-with-tag":{"href":"https://ariman.pactflow.io/pacts/provider/{provider}/tag/{tag}","title":"All pact versions for the provider with the specified consumer version tag","templated":true},"pb:provider-pacts":{"href":"https://ariman.pactflow.io/pacts/provider/{provider}","title":"All pact versions for the specified provider","templated":true},"pb:latest-version":{"href":"https://ariman.pactflow.io/pacticipants/{pacticipant}/latest-version","title":"Latest pacticipant version","templated":true},"pb:latest-tagged-version":{"href":"https://ariman.pactflow.io/pacticipants/{pacticipant}/latest-version/{tag}","title":"Latest pacticipant version with the specified tag","templated":true},"pb:webhooks":{"href":"https://ariman.pactflow.io/webhooks","title":"Webhooks","templated":false},"pb:webhook":{"href":"https://ariman.pactflow.io/webhooks/{uuid}","title":"Webhook","templated":true},"pb:integrations":{"href":"https://ariman.pactflow.io/integrations","title":"Integrations","templated":false},"pb:pacticipant-version-tag":{"href":"https://ariman.pactflow.io/pacticipants/{pacticipant}/versions/{version}/tags/{tag}","title":"Get, create or delete a tag for a pacticipant version","templated":true},"pb:pacticipant-branch-version":{"href":"https://ariman.pactflow.io/pacticipants/{pacticipant}/branches/{branch}/versions/{version}","title":"Get or add/create a pacticipant version for a branch","templated":true},"pb:pacticipant-version":{"href":"https://ariman.pactflow.io/pacticipants/{pacticipant}/versions/{version}","title":"Get, create or delete a pacticipant version","templated":true},"pb:metrics":{"href":"https://ariman.pactflow.io/metrics","title":"Get Pact Broker metrics"},"pb:can-i-deploy-pacticipant-version-to-tag":{"href":"https://ariman.pactflow.io/can-i-deploy?pacticipant={pacticipant}\u0026version={version}\u0026to={tag}","title":"Determine if an application version can be safely deployed to an environment identified by the given tag","templated":true},"pb:can-i-deploy-pacticipant-version-to-environment":{"href":"https://ariman.pactflow.io/can-i-deploy?pacticipant={pacticipant}\u0026version={version}\u0026environment={environment}","title":"Determine if an application version can be safely deployed to an environment","templated":true},"pb:provider-pacts-for-verification":{"href":"https://ariman.pactflow.io/pacts/provider/{provider}/for-verification","title":"Pact versions to be verified for the specified provider","templated":true},"beta:provider-pacts-for-verification":{"name":"beta","href":"https://ariman.pactflow.io/pacts/provider/{provider}/for-verification","title":"DEPRECATED - please use pb:provider-pacts-for-verification","templated":true},"curies":[{"name":"pb","href":"https://ariman.pactflow.io/doc/{rel}?context=index","templated":true},{"name":"beta","href":"https://ariman.pactflow.io/doc/{rel}?context=index","templated":true}],"pb:environment":{"title":"Environment","href":"https://ariman.pactflow.io/environments/{uuid}","templated":true},"pf:user-allocations":{"href":"https://ariman.pactflow.io/tenant/limits","title":"User Allocations","templated":false}}}"
+16:00:47.144 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
+16:00:47.145 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Mon, 06 Jun 2022 08:00:47 GMT
+16:00:47.146 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: application/hal+json;charset=utf-8
+16:00:47.147 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 4469
+16:00:47.147 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
+16:00:47.147 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Accept
+16:00:47.147 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Server: Webmachine-Ruby/1.6.0 Rack/1.3
+16:00:47.147 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pact-Broker-Version: 2.100.0
+16:00:47.147 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pact-Broker-Git-Sha: 69827ecc
+16:00:47.147 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pactflow-Git-Sha: e1a2389c2
+16:00:47.147 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Content-Type-Options: nosniff
+16:00:47.147 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+16:00:47.147 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Request-Id: a5f3701ff5ba5d8d20a8b4fac1ca644e
+16:00:47.148 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+16:00:47.148 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Authentication succeeded
+16:00:47.149 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Caching 'basic' auth scheme for https://ariman.pactflow.io:443
+16:00:47.160 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {s}->https://ariman.pactflow.io:443] can be kept alive indefinitely
+16:00:47.161 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 0
+16:00:47.161 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {s}->https://ariman.pactflow.io:443][total available: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+16:00:47.199 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+16:00:47.200 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+16:00:47.200 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://ariman.pactflow.io:443][total available: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+16:00:47.200 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {s}->https://ariman.pactflow.io:443][total available: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+16:00:47.200 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 0
+16:00:47.201 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request POST /pacts/provider/V2X-PCA-Service/for-verification HTTP/1.1
+16:00:47.201 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+16:00:47.201 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+16:00:47.201 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> POST /pacts/provider/V2X-PCA-Service/for-verification HTTP/1.1
+16:00:47.201 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Type: application/json; charset=UTF-8
+16:00:47.201 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept: application/hal+json, application/json
+16:00:47.201 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Length: 31
+16:00:47.201 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: ariman.pactflow.io
+16:00:47.201 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+16:00:47.201 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)
+16:00:47.201 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+16:00:47.201 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "POST /pacts/provider/V2X-PCA-Service/for-verification HTTP/1.1[\r][\n]"
+16:00:47.201 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+16:00:47.201 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept: application/hal+json, application/json[\r][\n]"
+16:00:47.201 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Length: 31[\r][\n]"
+16:00:47.201 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: ariman.pactflow.io[\r][\n]"
+16:00:47.201 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+16:00:47.202 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)[\r][\n]"
+16:00:47.202 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+16:00:47.202 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+16:00:47.203 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "{"consumerVersionSelectors":[]}"
+16:00:47.402 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 401 Unauthorized[\r][\n]"
+16:00:47.402 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Mon, 06 Jun 2022 08:00:47 GMT[\r][\n]"
+16:00:47.402 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: text/plain[\r][\n]"
+16:00:47.402 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 0[\r][\n]"
+16:00:47.402 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+16:00:47.402 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Accept[\r][\n]"
+16:00:47.402 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "WWW-Authenticate: Basic realm="Restricted area"[\r][\n]"
+16:00:47.403 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pact-Broker-Version: 2.100.0[\r][\n]"
+16:00:47.403 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pact-Broker-Git-Sha: 69827ecc[\r][\n]"
+16:00:47.403 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pactflow-Git-Sha: e1a2389c2[\r][\n]"
+16:00:47.403 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
+16:00:47.403 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Strict-Transport-Security: max-age=63072000; includeSubDomains; preload[\r][\n]"
+16:00:47.403 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Request-Id: 23aea5bef45625e862ac57f3cfe9a7c7[\r][\n]"
+16:00:47.403 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 401 Unauthorized
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Mon, 06 Jun 2022 08:00:47 GMT
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: text/plain
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 0
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Accept
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << WWW-Authenticate: Basic realm="Restricted area"
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pact-Broker-Version: 2.100.0
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pact-Broker-Git-Sha: 69827ecc
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pactflow-Git-Sha: e1a2389c2
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Content-Type-Options: nosniff
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+16:00:47.404 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Request-Id: 23aea5bef45625e862ac57f3cfe9a7c7
+16:00:47.405 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+16:00:47.405 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Authentication required
+16:00:47.405 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - ariman.pactflow.io:443 requested authentication
+16:00:47.405 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Authentication schemes in the order of preference: [Negotiate, Kerberos, NTLM, CredSSP, Digest, Basic]
+16:00:47.405 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Negotiate authentication scheme not available
+16:00:47.406 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Kerberos authentication scheme not available
+16:00:47.406 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for NTLM authentication scheme not available
+16:00:47.406 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for CredSSP authentication scheme not available
+16:00:47.408 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Digest authentication scheme not available
+16:00:47.409 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Selected authentication options: [BASIC [complete=true]]
+16:00:47.409 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request POST /pacts/provider/V2X-PCA-Service/for-verification HTTP/1.1
+16:00:47.409 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: CHALLENGED
+16:00:47.409 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Generating response to an authentication challenge using basic scheme
+16:00:47.410 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+16:00:47.410 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> POST /pacts/provider/V2X-PCA-Service/for-verification HTTP/1.1
+16:00:47.410 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Type: application/json; charset=UTF-8
+16:00:47.410 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept: application/hal+json, application/json
+16:00:47.410 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Length: 31
+16:00:47.410 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: ariman.pactflow.io
+16:00:47.410 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+16:00:47.410 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)
+16:00:47.410 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+16:00:47.410 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Authorization: Basic YmRZZHRieDJxclJIc0hmbVlET2FyOGVjYVhYMGhhRTp3dUtZZUJpTHRtaEtxUjVPRHFwbXpaN2lWY0RWdA==
+16:00:47.411 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "POST /pacts/provider/V2X-PCA-Service/for-verification HTTP/1.1[\r][\n]"
+16:00:47.411 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+16:00:47.411 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept: application/hal+json, application/json[\r][\n]"
+16:00:47.411 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Length: 31[\r][\n]"
+16:00:47.411 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: ariman.pactflow.io[\r][\n]"
+16:00:47.411 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+16:00:47.411 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)[\r][\n]"
+16:00:47.411 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+16:00:47.411 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Authorization: Basic YmRZZHRieDJxclJIc0hmbVlET2FyOGVjYVhYMGhhRTp3dUtZZUJpTHRtaEtxUjVPRHFwbXpaN2lWY0RWdA==[\r][\n]"
+16:00:47.411 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+16:00:47.411 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "{"consumerVersionSelectors":[]}"
+16:00:47.742 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+16:00:47.742 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Mon, 06 Jun 2022 08:00:47 GMT[\r][\n]"
+16:00:47.743 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: application/hal+json;charset=utf-8[\r][\n]"
+16:00:47.743 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 1132[\r][\n]"
+16:00:47.743 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+16:00:47.743 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Accept[\r][\n]"
+16:00:47.743 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Server: Webmachine-Ruby/1.6.0 Rack/1.3[\r][\n]"
+16:00:47.743 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pact-Broker-Version: 2.100.0[\r][\n]"
+16:00:47.743 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pact-Broker-Git-Sha: 69827ecc[\r][\n]"
+16:00:47.743 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Pactflow-Git-Sha: e1a2389c2[\r][\n]"
+16:00:47.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
+16:00:47.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Strict-Transport-Security: max-age=63072000; includeSubDomains; preload[\r][\n]"
+16:00:47.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Request-Id: 8b5c55ba2caa8ef6fe2be434b3d3034b[\r][\n]"
+16:00:47.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+16:00:47.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "{"_embedded":{"pacts":[{"shortDescription":"latest","verificationProperties":{"pending":false,"notices":[{"when":"before_verification","text":"The pact at https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36 is being verified because the pact content belongs to the consumer version matching the following criterion:\n    * latest version of V2X-RA-Service that has a pact with V2X-PCA-Service (1.0-SNAPSHOT)"},{"when":"before_verification","text":"This pact has previously been successfully verified by V2X-PCA-Service. If this verification fails, it will fail the build. Read more at https://docs.pact.io/go/pending"}]},"_links":{"self":{"href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/metadata/c1tdW2xdPXRydWUmc1tdW2N2XT0xNTEmcD1mYWxzZQ","name":"Pact between V2X-RA-Service (1.0-SNAPSHOT) and V2X-PCA-Service"}}}]},"_links":{"self":{"href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/for-verification","title":"Pacts to be verified"}}}"
+16:00:47.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
+16:00:47.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Mon, 06 Jun 2022 08:00:47 GMT
+16:00:47.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: application/hal+json;charset=utf-8
+16:00:47.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 1132
+16:00:47.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
+16:00:47.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Accept
+16:00:47.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Server: Webmachine-Ruby/1.6.0 Rack/1.3
+16:00:47.745 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pact-Broker-Version: 2.100.0
+16:00:47.745 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pact-Broker-Git-Sha: 69827ecc
+16:00:47.745 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Pactflow-Git-Sha: e1a2389c2
+16:00:47.745 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Content-Type-Options: nosniff
+16:00:47.745 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+16:00:47.745 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Request-Id: 8b5c55ba2caa8ef6fe2be434b3d3034b
+16:00:47.745 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+16:00:47.745 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Authentication succeeded
+16:00:47.745 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Caching 'basic' auth scheme for https://ariman.pactflow.io:443
+16:00:47.747 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {s}->https://ariman.pactflow.io:443] can be kept alive indefinitely
+16:00:47.747 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 0
+16:00:47.748 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {s}->https://ariman.pactflow.io:443][total available: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+16:00:47.762 [Test worker] DEBUG au.com.dius.pact.core.pactbroker.HalClient - Fetching: https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/metadata/c1tdW2xdPXRydWUmc1tdW2N2XT0xNTEmcD1mYWxzZQ
+16:00:47.764 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+16:00:47.765 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+16:00:47.765 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://ariman.pactflow.io:443][total available: 0; route allocated: 0 of 5; total allocated: 0 of 10]
+16:00:47.765 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {s}->https://ariman.pactflow.io:443][total available: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+16:00:47.766 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://ariman.pactflow.io:443
+16:00:47.766 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to ariman.pactflow.io/54.79.144.53:443
+16:00:47.766 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Connecting socket to ariman.pactflow.io/54.79.144.53:443 with timeout 0
+16:00:47.917 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: [TLSv1.2]
+16:00:47.917 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_DSS_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DHE_DSS_WITH_AES_256_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+16:00:47.918 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+16:00:48.267 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Secure session established
+16:00:48.267 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+16:00:48.267 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+16:00:48.267 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  peer principal: CN=*.pact.dius.com.au
+16:00:48.267 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  peer alternative names: [*.pact.dius.com.au, *.pactflow.io]
+16:00:48.267 [Test worker] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  issuer principal: CN=Amazon, OU=Server CA 1B, O=Amazon, C=US
+16:00:48.268 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.5:53732<->54.79.144.53:443
+16:00:48.268 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/metadata/c1tdW2xdPXRydWUmc1tdW2N2XT0xNTEmcD1mYWxzZQ HTTP/1.1
+16:00:48.268 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+16:00:48.268 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+16:00:48.268 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> GET /pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/metadata/c1tdW2xdPXRydWUmc1tdW2N2XT0xNTEmcD1mYWxzZQ HTTP/1.1
+16:00:48.269 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Content-Type: application/json
+16:00:48.269 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Accept: application/hal+json, application/json
+16:00:48.269 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Host: ariman.pactflow.io
+16:00:48.269 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Connection: Keep-Alive
+16:00:48.269 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)
+16:00:48.269 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Accept-Encoding: gzip,deflate
+16:00:48.269 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "GET /pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/metadata/c1tdW2xdPXRydWUmc1tdW2N2XT0xNTEmcD1mYWxzZQ HTTP/1.1[\r][\n]"
+16:00:48.269 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Content-Type: application/json[\r][\n]"
+16:00:48.269 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Accept: application/hal+json, application/json[\r][\n]"
+16:00:48.269 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Host: ariman.pactflow.io[\r][\n]"
+16:00:48.269 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+16:00:48.269 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)[\r][\n]"
+16:00:48.269 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+16:00:48.269 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "[\r][\n]"
+16:00:48.446 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "HTTP/1.1 401 Unauthorized[\r][\n]"
+16:00:48.447 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Date: Mon, 06 Jun 2022 08:00:48 GMT[\r][\n]"
+16:00:48.447 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Content-Type: text/plain[\r][\n]"
+16:00:48.447 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Content-Length: 0[\r][\n]"
+16:00:48.448 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+16:00:48.448 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Vary: Accept[\r][\n]"
+16:00:48.448 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "WWW-Authenticate: Basic realm="Restricted area"[\r][\n]"
+16:00:48.448 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Pact-Broker-Version: 2.100.0[\r][\n]"
+16:00:48.448 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Pact-Broker-Git-Sha: 69827ecc[\r][\n]"
+16:00:48.448 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Pactflow-Git-Sha: e1a2389c2[\r][\n]"
+16:00:48.448 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Content-Type-Options: nosniff[\r][\n]"
+16:00:48.448 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Strict-Transport-Security: max-age=63072000; includeSubDomains; preload[\r][\n]"
+16:00:48.448 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Request-Id: 6d5100ef56a157de8ac0bd6e9f2b1018[\r][\n]"
+16:00:48.448 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "[\r][\n]"
+16:00:48.448 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << HTTP/1.1 401 Unauthorized
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Date: Mon, 06 Jun 2022 08:00:48 GMT
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Content-Type: text/plain
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Content-Length: 0
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Connection: keep-alive
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Vary: Accept
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << WWW-Authenticate: Basic realm="Restricted area"
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Pact-Broker-Version: 2.100.0
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Pact-Broker-Git-Sha: 69827ecc
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Pactflow-Git-Sha: e1a2389c2
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Content-Type-Options: nosniff
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+16:00:48.449 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Request-Id: 6d5100ef56a157de8ac0bd6e9f2b1018
+16:00:48.449 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+16:00:48.450 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Authentication required
+16:00:48.450 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - ariman.pactflow.io:443 requested authentication
+16:00:48.451 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Authentication schemes in the order of preference: [Negotiate, Kerberos, NTLM, CredSSP, Digest, Basic]
+16:00:48.451 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Negotiate authentication scheme not available
+16:00:48.451 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Kerberos authentication scheme not available
+16:00:48.451 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for NTLM authentication scheme not available
+16:00:48.451 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for CredSSP authentication scheme not available
+16:00:48.451 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Digest authentication scheme not available
+16:00:48.451 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Selected authentication options: [BASIC [complete=true]]
+16:00:48.451 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/metadata/c1tdW2xdPXRydWUmc1tdW2N2XT0xNTEmcD1mYWxzZQ HTTP/1.1
+16:00:48.451 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: CHALLENGED
+16:00:48.451 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Generating response to an authentication challenge using basic scheme
+16:00:48.452 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+16:00:48.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> GET /pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/metadata/c1tdW2xdPXRydWUmc1tdW2N2XT0xNTEmcD1mYWxzZQ HTTP/1.1
+16:00:48.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Content-Type: application/json
+16:00:48.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Accept: application/hal+json, application/json
+16:00:48.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Host: ariman.pactflow.io
+16:00:48.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Connection: Keep-Alive
+16:00:48.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)
+16:00:48.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Accept-Encoding: gzip,deflate
+16:00:48.452 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Authorization: Basic YmRZZHRieDJxclJIc0hmbVlET2FyOGVjYVhYMGhhRTp3dUtZZUJpTHRtaEtxUjVPRHFwbXpaN2lWY0RWdA==
+16:00:48.453 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "GET /pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/metadata/c1tdW2xdPXRydWUmc1tdW2N2XT0xNTEmcD1mYWxzZQ HTTP/1.1[\r][\n]"
+16:00:48.453 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Content-Type: application/json[\r][\n]"
+16:00:48.453 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Accept: application/hal+json, application/json[\r][\n]"
+16:00:48.453 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Host: ariman.pactflow.io[\r][\n]"
+16:00:48.453 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+16:00:48.453 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)[\r][\n]"
+16:00:48.453 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+16:00:48.453 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Authorization: Basic YmRZZHRieDJxclJIc0hmbVlET2FyOGVjYVhYMGhhRTp3dUtZZUJpTHRtaEtxUjVPRHFwbXpaN2lWY0RWdA==[\r][\n]"
+16:00:48.453 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "[\r][\n]"
+16:00:48.694 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "HTTP/1.1 200 OK[\r][\n]"
+16:00:48.694 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Date: Mon, 06 Jun 2022 08:00:48 GMT[\r][\n]"
+16:00:48.694 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Content-Type: application/hal+json;charset=utf-8[\r][\n]"
+16:00:48.695 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Content-Length: 4955[\r][\n]"
+16:00:48.695 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+16:00:48.695 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Vary: Accept[\r][\n]"
+16:00:48.695 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Server: Webmachine-Ruby/1.6.0 Rack/1.3[\r][\n]"
+16:00:48.695 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Pact-Broker-Version: 2.100.0[\r][\n]"
+16:00:48.695 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Pact-Broker-Git-Sha: 69827ecc[\r][\n]"
+16:00:48.695 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Pactflow-Git-Sha: e1a2389c2[\r][\n]"
+16:00:48.696 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Content-Type-Options: nosniff[\r][\n]"
+16:00:48.696 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Strict-Transport-Security: max-age=63072000; includeSubDomains; preload[\r][\n]"
+16:00:48.696 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Request-Id: 21fc9e5a4ce8f2efade30f032f9619f6[\r][\n]"
+16:00:48.697 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "[\r][\n]"
+16:00:48.698 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "{"provider":{"name":"V2X-PCA-Service"},"consumer":{"name":"V2X-RA-Service"},"interactions":[{"_id":"e792cb8a3eea69e792eadda25ae5dbbb9f863bf8","description":"Cert Apply","request":{"method":"POST","path":"/cert/apply","headers":{"Content-Type":"application/octet-stream"},"body":"AQIDBA=="},"response":{"status":200,"headers":{"Content-Type":"application/octet-stream"},"body":"DCAtFw==","matchingRules":{"body":{"$":{"matchers":[{"match":"contentType","value":"application/octet-stream"}],"combine":"AND"}}}},"providerStates":[{"name":"Cert apply success","params":{"test":"shiliang","cert":null}}]}],"metadata":{"pactSpecification":{"version":"3.0.0"},"pact-jvm":{"version":"4.1.7"}},"createdAt":"2022-06-05T13:57:40+00:00","_links":{"self":{"title":"Pact","name":"Pact between V2X-RA-Service (1.0-SNAPSHOT) and V2X-PCA-Service","href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/version/1.0-SNAPSHOT"},"pb:consumer":{"title":"Consumer","name":"V2X-RA-Service","href":"https://ariman.pactflow.io/pacticipants/V2X-RA-Service"},"pb:consumer-version":{"title":"Consumer version","name":"1.0-SNAPSHOT","href":"https://ariman.pactflow.io/pacticipants/V2X-RA-Service/versions/1.0-SNAPSHOT"},"pb:consumer-versions":[{"title":"Consumer version","name":"1.0-SNAPSHOT","href":"https://ariman.pactflow.io/pacticipants/V2X-RA-Service/versions/1.0-SNAPSHOT"}],"pb:provider":{"title":"Provider","name":"V2X-PCA-Service","href":"https://ariman.pactflow.io/pacticipants/V2X-PCA-Service"},"pb:pact-version":{"title":"Pact content version permalink","name":"251936f1d3ab33184bbdac310f79d4bc09fd2a36","href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36"},"pb:latest-pact-version":{"title":"Latest version of this pact","href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/latest"},"pb:all-pact-versions":{"title":"All versions of this pact","href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/versions"},"pb:latest-untagged-pact-version":{"title":"Latest untagged version of this pact","href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/latest-untagged"},"pb:latest-tagged-pact-version":{"title":"Latest tagged version of this pact","href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/latest/{tag}","templated":true},"pb:previous-distinct":{"title":"Previous distinct version of this pact","href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/version/1.0-SNAPSHOT/previous-distinct"},"pb:diff-previous-distinct":{"title":"Diff with previous distinct version of this pact","href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/version/1.0-SNAPSHOT/diff/previous-distinct"},"pb:diff":{"title":"Diff with another specified version of this pact","href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/diff/pact-version/{pactVersion}","templated":true},"pb:pact-webhooks":{"title":"Webhooks for the pact between V2X-RA-Service and V2X-PCA-Service","href":"https://ariman.pactflow.io/webhooks/provider/V2X-PCA-Service/consumer/V2X-RA-Service"},"pb:consumer-webhooks":{"title":"Webhooks for all pacts with provider V2X-PCA-Service","href":"https://ariman.pactflow.io/webhooks/consumer/V2X-PCA-Service"},"pb:tag-prod-version":{"title":"PUT to this resource to tag this consumer version as 'production'","href":"https://ariman.pactflow.io/pacticipants/V2X-RA-Service/versions/1.0-SNAPSHOT/tags/prod"},"pb:tag-version":{"title":"PUT to this resource to tag this consumer version","href":"https://ariman.pactflow.io/pacticipants/V2X-RA-Service/versions/1.0-SNAPSHOT/tags/{tag}"},"pb:publish-verification-results":{"title":"Publish verification results","href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/metadata/c1tdW2xdPXRydWUmc1tdW2N2XT0xNTEmcD1mYWxzZQ/verification-results"},"pb:latest-verification-results":{"href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/verification-results/latest"},"pb:triggered-webhooks":{"title":"Webhooks triggered by the publication of this pact","href":"https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/version/1.0-SNAPSHOT/triggered-webhooks"},"pb:matrix-for-consumer-version":{"title":"View matrix rows for the consumer version to which this pact belongs","href":"https://ariman.pactflow.io/matrix?q[][pacticipant]=V2X-RA-Service\u0026q[][version]=1.0-SNAPSHOT\u0026latestby=cvpv"},"curies":[{"name":"pb","href":"https://ariman.pactflow.io/doc/{rel}?context=pact","templated":true}]}}"
+16:00:48.699 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << HTTP/1.1 200 OK
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Date: Mon, 06 Jun 2022 08:00:48 GMT
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Content-Type: application/hal+json;charset=utf-8
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Content-Length: 4955
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Connection: keep-alive
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Vary: Accept
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Server: Webmachine-Ruby/1.6.0 Rack/1.3
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Pact-Broker-Version: 2.100.0
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Pact-Broker-Git-Sha: 69827ecc
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Pactflow-Git-Sha: e1a2389c2
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Content-Type-Options: nosniff
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+16:00:48.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Request-Id: 21fc9e5a4ce8f2efade30f032f9619f6
+16:00:48.702 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+16:00:48.702 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Authentication succeeded
+16:00:48.702 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Caching 'basic' auth scheme for https://ariman.pactflow.io:443
+16:00:48.703 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 1][route: {s}->https://ariman.pactflow.io:443] can be kept alive indefinitely
+16:00:48.703 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-1: set socket timeout to 0
+16:00:48.703 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 1][route: {s}->https://ariman.pactflow.io:443][total available: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+16:00:48.721 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+16:00:48.725 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+16:00:49.280 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@27c23a25 testClass = CertApplyPactTest, testInstance = kl.v2x.test.CertApplyPactTest@be6f093, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@42ab610 testClass = CertApplyPactTest, locations = '{}', classes = '{class kl.v2x.provider.ProviderApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@38442bdd, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1c7963c7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6c24e04f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@423cbf7e, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1e092b65], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]]].
+16:00:49.317 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v2.3.12.RELEASE)
+
+2022-06-06 16:00:49.695  INFO 73187 --- [    Test worker] kl.v2x.test.CertApplyPactTest            : Starting CertApplyPactTest on ShideMacBook-Pro.local with PID 73187 (started by shiliang in /Users/shiliang/IdeaProjects/pact-demo/provider-service)
+2022-06-06 16:00:49.714  INFO 73187 --- [    Test worker] kl.v2x.test.CertApplyPactTest            : No active profile set, falling back to default profiles: default
+2022-06-06 16:00:50.114  WARN 73187 --- [kground-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2022-06-06 16:00:52.405  INFO 73187 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-06-06 16:00:52.422  INFO 73187 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-06 16:00:52.422  INFO 73187 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-06-06 16:00:52.560  INFO 73187 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-06 16:00:52.560  INFO 73187 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2240 ms
+2022-06-06 16:00:53.263  INFO 73187 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-06 16:00:53.985  INFO 73187 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 53740 (http) with context path ''
+2022-06-06 16:00:54.003  INFO 73187 --- [    Test worker] kl.v2x.test.CertApplyPactTest            : Started CertApplyPactTest in 4.682 seconds (JVM running for 11.339)
+{test=shiliang, cert=null}
+
+Verifying a pact between Pact between V2X-RA-Service (1.0-SNAPSHOT) and V2X-PCA-Service
+
+  Notices:
+    1) The pact at https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36 is being verified because the pact content belongs to the consumer version matching the following criterion:
+    * latest version of V2X-RA-Service that has a pact with V2X-PCA-Service (1.0-SNAPSHOT)
+    2) This pact has previously been successfully verified by V2X-PCA-Service. If this verification fails, it will fail the build. Read more at https://docs.pact.io/go/pending
+
+  [from Pact Broker https://ariman.pactflow.io/pacts/provider/V2X-PCA-Service/consumer/V2X-RA-Service/pact-version/251936f1d3ab33184bbdac310f79d4bc09fd2a36/metadata/c1tdW2xdPXRydWUmc1tdW2N2XT0xNTEmcD1mYWxzZQ]
+  Given Cert apply success
+  Cert Apply
+2022-06-06 16:00:54.564  INFO 73187 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-06 16:00:54.564  INFO 73187 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-06 16:00:54.617  INFO 73187 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 53 ms
+    returns a response which
+      has status code 200 (OK)
+      has a matching body (OK)
+2022-06-06 16:00:54.813  WARN 73187 --- [    Test worker] a.c.dius.pact.provider.ProviderVersion   : Provider version not set, defaulting to '0.0.0'
+2022-06-06 16:00:56.010  INFO 73187 --- [    Test worker] a.c.d.p.p.DefaultVerificationReporter    : Published verification result of 'au.com.dius.pact.core.pactbroker.TestResult$Ok@34ab9334' for consumer 'Consumer(name=V2X-RA-Service)'
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

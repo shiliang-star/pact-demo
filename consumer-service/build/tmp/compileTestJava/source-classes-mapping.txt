@@ -1,0 +1,6 @@
+kl/v2x/consumer/test/CustomerContractTest.java
+ kl.v2x.consumer.test.CustomerContractTest
+kl/v2x/consumer/test/DeviceUploadContractTest.java
+ kl.v2x.consumer.test.DeviceUploadContractTest
+kl/v2x/consumer/test/CertApplyContractTest.java
+ kl.v2x.consumer.test.CertApplyContractTest

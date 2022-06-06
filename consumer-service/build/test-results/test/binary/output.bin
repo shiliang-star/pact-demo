@@ -1,0 +1,117 @@
+…15:01:48.754 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - Found @PactTestFor annotation on test method
+î15:01:48.760 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - providerInfo = ProviderInfo(providerName=, hostInterface=, port=, pactVersion=null, providerType=null, https=false, mockServerImplementation=Default)
+š15:01:48.761 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - Looking for @Pact method named 'certApply' for provider 'default'
+15:01:48.763 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - Invoking method 'certApply' to get Pact for the test 'testCertApply'
+d15:01:49.179 [Test worker] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Starting mock server
+u15:01:49.180 [Test worker] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Mock server started: /127.0.0.1:65246
+r15:01:49.678 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+v15:01:49.685 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+’15:01:49.685 [Test worker] DEBUG org.apache.http.impl.conn.BasicHttpClientConnectionManager - Get connection for route {}->http://localhost:65246
+‰15:01:49.693 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 0
+15:01:49.694 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:65246
+‰15:01:49.695 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:65246
+š15:01:49.699 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:65249<->127.0.0.1:65246
+v15:01:49.699 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request OPTIONS / HTTP/1.1
+q15:01:49.699 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+p15:01:49.699 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+a15:01:49.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> OPTIONS / HTTP/1.1
+e15:01:49.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> X-PACT-BOOTCHECK: true
+d15:01:49.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: localhost:65246
+e15:01:49.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+„15:01:49.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)
+l15:01:49.700 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+h15:01:49.701 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "OPTIONS / HTTP/1.1[\r][\n]"
+l15:01:49.701 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "X-PACT-BOOTCHECK: true[\r][\n]"
+k15:01:49.701 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: localhost:65246[\r][\n]"
+l15:01:49.701 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+‹15:01:49.701 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)[\r][\n]"
+s15:01:49.701 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+V15:01:49.701 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+e15:01:49.708 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+y15:01:49.709 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Mon, 06 Jun 2022 07:01:49 GMT[\r][\n]"
+p15:01:49.709 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Transfer-encoding: chunked[\r][\n]"
+l15:01:49.709 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-pact-bootcheck: true[\r][\n]"
+V15:01:49.709 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+^15:01:49.711 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
+r15:01:49.711 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Mon, 06 Jun 2022 07:01:49 GMT
+i15:01:49.711 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Transfer-encoding: chunked
+e15:01:49.711 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-pact-bootcheck: true
+{15:01:49.714 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+‚15:01:49.715 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
+f15:01:49.716 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+15:01:49.716 [Test worker] DEBUG org.apache.http.impl.conn.BasicHttpClientConnectionManager - Releasing connection [Not bound]
+Ú15:01:50.103 [Test worker] WARN org.springframework.http.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+{15:01:50.159 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:65246/cert/apply
+œ15:01:50.166 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/octet-stream, application/json, application/*+json, */*]
+‚15:01:50.171 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Writing [[B@e6effe7] as "application/octet-stream"
+r15:01:50.174 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+v15:01:50.174 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+ß15:01:50.175 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:65246][total available: 0; route allocated: 0 of 5; total allocated: 0 of 10]
+å15:01:50.176 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:65246][total available: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+15:01:50.176 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:65246
+‰15:01:50.176 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:65246
+š15:01:50.177 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:65252<->127.0.0.1:65246
+}15:01:50.177 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request POST /cert/apply HTTP/1.1
+q15:01:50.177 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+p15:01:50.177 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+h15:01:50.178 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> POST /cert/apply HTTP/1.1
+o15:01:50.178 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Accept: application/octet-stream
+u15:01:50.178 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Content-Type: application/octet-stream
+`15:01:50.178 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Content-Length: 4
+d15:01:50.178 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Host: localhost:65246
+e15:01:50.178 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Connection: Keep-Alive
+„15:01:50.180 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)
+l15:01:50.180 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Accept-Encoding: gzip,deflate
+o15:01:50.180 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "POST /cert/apply HTTP/1.1[\r][\n]"
+v15:01:50.181 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Accept: application/octet-stream[\r][\n]"
+|15:01:50.181 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Content-Type: application/octet-stream[\r][\n]"
+g15:01:50.181 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Content-Length: 4[\r][\n]"
+k15:01:50.181 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Host: localhost:65246[\r][\n]"
+l15:01:50.181 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+‹15:01:50.181 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_321)[\r][\n]"
+s15:01:50.181 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+V15:01:50.181 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "[\r][\n]"
+b15:01:50.181 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "[0x1][0x2][0x3][0x4]"
+l15:01:50.193 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Received request: 	method: POST
+	path: /cert/apply
+	query: {}
+ô	headers: {Accept-encoding=[gzip,deflate], Accept=[application/octet-stream], Connection=[Keep-Alive], Host=[localhost:65246], User-agent=[Apache-HttpClient/4.5.13 (Java/1.8.0_321)], Content-type=[application/octet-stream], Content-length=[4]}
+#	matchers: MatchingRules(rules={})
+'	generators: Generators(categories={})
+2	body: PRESENT(4 bytes starting with 01020304...)
+o15:01:50.195 [Thread-5] DEBUG au.com.dius.pact.core.matchers.RequestMatching - comparing to expected request: 
+	method: POST
+	path: /cert/apply
+	query: {}
+;	headers: {Content-Type=[application/json; charset=UTF-8]}
+Á	matchers: MatchingRules(rules={body=Category(name=body, matchingRules={$.request=MatchingRuleGroup(rules=[au.com.dius.pact.core.model.matchingrules.EqualsMatcher@1d661cc8], ruleLogic=AND)})})
+'	generators: Generators(categories={})
+7	body: PRESENT({"request":"\u0001\u0002\u0003\u0004"})
+®15:01:50.201 [Thread-5] DEBUG au.com.dius.pact.core.matchers.HeaderMatcher - Comparing header 'Content-Type': 'application/octet-stream' to 'application/json; charset=UTF-8'
+¬15:01:50.202 [Thread-5] DEBUG au.com.dius.pact.core.matchers.HeaderMatcher - Comparing content type header: 'application/octet-stream' to 'application/json; charset=UTF-8'
+Ë15:01:50.207 [Thread-5] DEBUG au.com.dius.pact.core.matchers.RequestMatching - Request mismatch: RequestMatchResult(method=null, path=null, query=[], cookie=null, headers=[HeaderMatchResult(key=Content-Type, result=[HeaderMismatch(headerKey=Content-Type, expected=application/json; charset=UTF-8, actual=application/octet-stream, mismatch=Expected header 'Content-Type' to have value 'application/json; charset=UTF-8' but was 'application/octet-stream')])], body=BodyMatchResult(typeMismatch=BodyTypeMismatch(expected=application/json, actual=application/octet-stream), bodyResults=[]))
+n15:01:50.220 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Generating response: 	status: 500
+l	headers: {Access-Control-Allow-Origin=[*], Content-Type=[application/json], X-Pact-Unexpected-Request=[1]}
+#	matchers: MatchingRules(rules={})
+'	generators: Generators(categories={})
+ã	body: PRESENT({ "error": "Unexpected request : \tmethod: POST\n\tpath: \/cert\/apply\n\tquery: {}\n\theaders: {Accept-encoding=[gzip,deflate], Accept=[application\/octet-stream], Connection=[Keep-Alive], Host=[localhost:65246], User-agent=[Apache-HttpClient\/4.5.13 (Java\/1.8.0_321)], Content-type=[application\/octet-stream], Content-length=[4]}\n\tmatchers: MatchingRules(rules={})\n\tgenerators: Generators(categories={})\n\tbody: PRESENT(4 bytes starting with 01020304...)" })
+x15:01:50.221 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "HTTP/1.1 500 Internal Server Error[\r][\n]"
+t15:01:50.221 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Access-Control-Allow-Origin: *[\r][\n]"
+r15:01:50.221 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Pact-Unexpected-Request: 1[\r][\n]"
+y15:01:50.221 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Date: Mon, 06 Jun 2022 07:01:50 GMT[\r][\n]"
+i15:01:50.221 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Content-length: 466[\r][\n]"
+t15:01:50.221 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Content-Type: application/json[\r][\n]"
+V15:01:50.221 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "[\r][\n]"
+q15:01:50.222 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << HTTP/1.1 500 Internal Server Error
+m15:01:50.222 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Access-Control-Allow-Origin: *
+k15:01:50.222 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Pact-Unexpected-Request: 1
+r15:01:50.222 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Date: Mon, 06 Jun 2022 07:01:50 GMT
+b15:01:50.222 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Content-length: 466
+m15:01:50.222 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Content-Type: application/json
+{15:01:50.222 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+r15:01:50.224 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 500 INTERNAL_SERVER_ERROR
+ 15:01:50.225 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "{ "error": "Unexpected request : \tmethod: POST\n\tpath: \/cert\/apply\n\tquery: {}\n\theaders: {Accept-encoding=[gzip,deflate], Accept=[application\/octet-stream], Connection=[Keep-Alive], Host=[localhost:65246], User-agent=[Apache-HttpClient\/4.5.13 (Java\/1.8.0_321)], Content-type=[application\/octet-stream], Content-length=[4]}\n\tmatchers: MatchingRules(rules={})\n\tgenerators: Generators(categories={})\n\tbody: PRESENT(4 bytes starting with 01020304...)" }"
+µ15:01:50.225 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {}->http://localhost:65246] can be kept alive indefinitely
+‰15:01:50.225 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-1: set socket timeout to 0
+ç15:01:50.225 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://localhost:65246][total available: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+d15:01:50.233 [Test worker] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Mock server shutdown
